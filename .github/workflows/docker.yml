@@ -37,3 +37,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: supray/bingo-api:latest
+      - 
+        name: Deploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
