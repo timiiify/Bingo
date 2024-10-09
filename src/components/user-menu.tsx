@@ -80,28 +80,15 @@ export function UserMenu() {
           >
             Prompt Word Management
           </DropdownMenuItem>
-          <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
             <a
-              href="https://github.com/Niansuh/Bingo/"
+              href="https://typegpt.net"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-between w-full gap-2 cursor-pointer"
             >
-              Open Source Address
+              Site URL
               <IconGitHub />
-              <IconExternalLink className="w-3 h-3 ml-auto" />
-            </a>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem asChild>
-            <a
-              href="https://huggingface.co/login?next=%2Fspaces%2FNiansuhAI%2FBingo%3Fduplicate%3Dtrue%26visibility%3Dpublic"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-between w-full gap-2 cursor-pointer"
-            >
-              Copy Site
               <IconExternalLink className="w-3 h-3 ml-auto" />
             </a>
           </DropdownMenuItem>
@@ -114,12 +101,6 @@ export function UserMenu() {
             <div className="font-medium" onClick={() => installPrompt.prompt?.()}>Install Bing To Your Desktop</div>
           </DropdownMenuItem>}
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="flex-col items-start">
-            <div className="font-medium">Site Domain Name</div>
-            <div onClick={() => copyToClipboard(host)} className="flex gap-1 text-xs text-zinc-500 cursor-pointer">
-              {host} <IconCopy />
-            </div>
-          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

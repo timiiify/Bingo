@@ -100,22 +100,22 @@ export class BingWebBot {
     const uuid = randomUUID()
     const useBaseSets = (conversation.context?.length ?? 0) > 0
     const message = {
-      locale: 'zh-CN',
-      market: 'zh-CN',
-      region: 'PK',
+      locale: 'en-US',
+      market: 'en-US',
+      region: 'US',
       locationHints: [
         {
           "SourceType": 1,
           "RegionType": 2,
           "Center": {
-            "Latitude": 30.3753,
-            "Longitude": 69.3451,
+            "Latitude": 34.0536909,
+            "Longitude": -118.242766,
           },
           "Radius": 24902,
-          "Name": "Pakistan",
+          "Name": "United States",
           "Accuracy": 24902,
           "FDConfidence": 0,
-          "CountryName": "Pakistan",
+          "CountryName": "United States",
           "CountryConfidence": 9,
           "PopulatedPlaceConfidence": 0,
           "UtcOffset": 8,
@@ -193,7 +193,7 @@ export class BingWebBot {
   async createConversation(conversationId?: string): Promise<ConversationResponse> {
     const headers = {
       'Accept-Encoding': 'gzip, deflate, br, zsdch',
-      'x-ms-useragent': 'azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.12.3 OS/Android',
+      'x-ms-useragent': 'azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.15.1 OS/Android',
       cookie: this.cookie,
     }
 
@@ -213,7 +213,7 @@ export class BingWebBot {
     }
 
     if (!resp?.result) {
-      throw new ChatError('Your VPS or proxy may be banned. If you have any questions, please go to https://github.com/Niansuh/Bingo for consultation', ErrorCode.BING_IP_FORBIDDEN)
+      throw new ChatError('Your VPS or proxy may be banned.', ErrorCode.BING_IP_FORBIDDEN)
     }
 
     const { value, message } = resp.result || {}
@@ -351,7 +351,7 @@ export class BingWebBot {
         headers: {
           'accept-language': 'en-US,en;q=0.9',
           'cache-control': 'no-cache',
-          "user-agent": "Mozilla/5.0 (Linux; Android 7.1.1; OPPO R11t) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36 EdgA/108.0.1462.4",
+          "user-agent": "Mozilla/5.0 (Linux; Android 8.0.0; SM-G955U Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36 Edg/127.0.0.0",
           pragma: 'no-cache',
           cookie: this.cookie,
         }
@@ -371,7 +371,7 @@ export class BingWebBot {
   private async createImage(prompt: string, id: string) {
     const headers = {
       'Accept-Encoding': 'gzip, deflate, br, zsdch',
-      'x-ms-useragent': 'azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.12.3 OS/Android',
+      'x-ms-useragent': 'azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.15.1 OS/Android',
       cookie: this.cookie,
     }
 
